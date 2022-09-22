@@ -1,4 +1,4 @@
-# JD-Dev-Enviroment
+# JS-Dev-Enviroment
 A Javascript Development Enviroment Starter Kit For A awesome Team
 
 ```
