@@ -1,5 +1,5 @@
 import './index.css'
-import { getUser } from "./api/userApi";
+import { deleteUser, getUser } from "./api/userApi";
 
 // getUser user via API Call
 getUser().then(res => {
@@ -14,5 +14,17 @@ getUser().then(res => {
   });
 
   global.document.getElementById('users').innerHTML = userBody;
+
+  const deletLinks = global.document.getElementsByClassName('deleteUser');
+
+  Array.from(deletLinks, link => {
+    link.onclick = function(evenet) {
+      const element = event.target;
+      evenet.preventDefault();
+      deleteUser(element.attributes["data-id"].value);
+      const row = element.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  });
 
 });
