@@ -2,6 +2,7 @@ import path from "path";
 
 export default {
   mode: "development",
+  stats: 'none', // console output stats off
   devtool: "eval-source-map",
   entry: "./src/index.js",
   output: {
